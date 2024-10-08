@@ -27,7 +27,7 @@ This research is significant as it contributes to the field of personal health m
 Data was collected from nine subjects equipped with three Colibri wireless IMUs and a BM-CS5SR heart-rate monitor. The subjects consisted of one female and eight males, aged 27.22 ± 3.31 years.
 
 ### Subject Details
-Comprehensive demographic and physiological data were collected for each subject, including specific measurements like age, gender, height, weight, resting heart rate, and maximum heart rate. Detailed individual subject information is available in [Subject Information](./assets/subjectInformation.pdf)
+Comprehensive demographic and physiological data were collected for each subject, including specific measurements like age, gender, height, weight, resting heart rate, and maximum heart rate. Detailed individual subject information is available in [Subject Information](./assets/subjectInformation.pdf/)
 .
 
 ### Data Collection Hardware
@@ -37,7 +37,7 @@ Comprehensive demographic and physiological data were collected for each subject
 ### Activities Performed
 The subjects performed a structured set of 12 basic activities outlined in the `DataCollectionProtocol.pdf`, with additional optional activities suggested from a list containing a wide range of everyday, household, and sports activities. The basic activities included:
 1. Lying
-2. Sitting
+2. Sitting/
 3. Standing
 4. Walking
 5. Running
