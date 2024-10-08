@@ -65,46 +65,94 @@ Over 10 hours of data were collected, with nearly 8 hours labeled according to t
 
 ## Libraries and Modules Utilised
 
-A variety of Python libraries were employed for data analysis:
+For comprehensive data analysis and modeling, a variety of Python libraries and modules were employed, as detailed below:
 
-- **Pandas**: For data manipulation tasks such as merging data frames and handling missing values.
-- **NumPy**: For heavy numerical computations.
-- **Matplotlib** and **Seaborn**: For visual data exploration and creating plots.
-- **SciKit-Learn**: For PCA, KMeans clustering, and regression models.
+- **Pandas**: Used for data manipulation tasks such as merging data frames and handling missing values.
+- **NumPy**: Utilised for heavy numerical computations.
+- **Matplotlib** and **Seaborn**: Employed for visual data exploration and creating insightful plots.
+- **SciKit-Learn**: Used for several machine learning tasks including Principal Component Analysis (PCA), linear regression models, and feature selection.
+- **StatsModels**: Applied for more detailed statistical modeling and hypothesis testing. This includes using the Empirical Cumulative Distribution Function (ECDF) for non-parametric analysis.
+- **StandardScaler**: From SciKit-Learn, used for normalising features before applying machine learning models.
+- **SequentialFeatureSelector**: Also from SciKit-Learn, employed to identify the best subset of features for predictive modeling.
+- **Train Test Split**, **Mean Squared Error**, and **R2 Score**: Utilised for model evaluation, specifically to assess the performance of regression models.
+- **Linear Regression**: Implemented for predictive modeling, essential for understanding relationships between variables.
 
-## Data Wrangling and Cleaning Process
+### Data Wrangling and Cleaning Process
 
-Key steps included:
+#### Data Consolidation
+- **Source Data**: Data from nine subjects consolidated into a single DataFrame from multiple .dat files.
+- **Method**: The data files were concatenated using pandas to create a unified DataFrame with consistent column titles, ensuring seamless integration of all subjects' data.
 
-- **Consolidation**: Data from nine subjects consolidated into a single DataFrame.
-- **Merging Additional Data**: Merged optional activity data for a fuller activity range.
-- **Data Cleaning**: Removed unreliable sensor readings and filled missing values.
+#### Merging Additional Data
+- **Additional Data**: Merged optional activity data to enrich the dataset.
+- **Process**: For subjects with optional activity data, these data were merged with their main dataset, expanding the range of activities analysed and enhancing data depth.
 
-## Predictive Hypothesis and Analytical Methodology
+#### Data Cleaning
+- **Handling Missing Values**: Removed unreliable sensor readings and filled missing values. Specifically, NaN values in the 'heart rate (bpm)' column were filled using forward and backward filling methods to preserve data continuity without introducing bias.
+- **Adjustments in Data**:
+  - Activity data with activityID of 0, indicating transitional or unlabeled activities, were removed to maintain focus on relevant activity data.
+  - Specific sensor data columns identified as unreliable were excluded from further analysis.
+  - Orientation data, found to be invalid, were discarded to prevent skewed analysis.
 
-The hypothesis assumed that physiological metrics could predict the type of physical activity and its intensity. This involved:
+#### Data Integration and Enrichment
+- **BMI Calculation**: Introduced new columns for Body Mass Index (BMI), calculated from subjects' height and weight, facilitating health-related insights.
+- **Activity Duration**: Computed the duration of each activity, offering a detailed view of time allocation among different physical activities.
 
-- **Dimensionality Reduction**: Using PCA to reduce data complexity.
-- **Clustering**: Applying KMeans to group similar activity patterns.
-- **Regression Analysis**: Developing models to predict activity types from physiological data.
+#### Data Structure Optimisation
+- **Normalisation**: Standardised the dataset to prepare for principal component analysis, ensuring that features contribute equally without scale bias.
+- **Feature Reduction**: Removed less impactful features, focusing the analysis on significant variables and improving computational efficiency.
 
-## Detailed Analytical Results
+### Predictive Hypothesis and Analytical Methodology
 
-Findings included:
+The hypothesis assumes that physiological metrics derived from Colibri Wireless units can accurately predict the type of physical activity and its intensity. The analytical methodology involves the following main stages:
 
-- **Activity Patterns**: Variations in how subjects responded to similar activities.
-- **Correlation Studies**: Significant correlations between BMI and activity intensity.
+1. **Dimensionality Reduction**: Utilize Principal Component Analysis (PCA) to reduce the complexity of the dataset while preserving essential features. This transformation helps simplify the subsequent analysis by focusing on the most significant variables that contribute to variance in the data.
 
-## Conclusions and Future Work
+2. **Regression Analysis**: Develop regression models to predict activity types based on physiological data metrics. These models aim to correlate specific physiological responses with different physical activities and intensities, providing a predictive framework for recognizing activity types.
 
-The study concluded significant potential for the Colibri unit in enhancing activity monitoring. Recommendations include:
+This methodology is designed to enhance the predictive accuracy of physical activity monitoring using data collected from the Colibri Wireless units. It supports detailed analysis and interpretation of the physiological data to understand activity patterns better.
 
-- Enhancing sensor accuracy.
-- Expanding data collection protocols.
-- Developing real-time predictive algorithms.
+# Detailed Analytical Results: Revised Analysis
 
-## Repository and Documentation
+## Activity Patterns:
+It was observed from the bar charts that not all subjects participated in every activity and did not spent the same duration doing each activity, showcasing varied engagement levels. 
 
-All scripts and data are organized in a structured repository, ensuring transparency and ease of development or replication.
+## BMI Insights:
+Individuals were categorised into 'Healthy' and 'Overweight' groups based on their BMI, with no participants falling into 'Underweight' or 'Obese' categories. This categorisation was crucial in analysing patterns, as shown in the box-and-whisker plots that detailed the time taken for activities and heart rates, indicating different physical exertion levels across BMI categories.
 
-This README provides exhaustive documentation of the project from data collection through detailed analysis, aimed at ensuring clarity and thorough understanding for further research.
+## Data Distribution:
+The dataset was divided based on BMI categories ('Underweight' and 'Healthy' versus 'Overweight' and 'Obese'), and histograms were used to study the data distribution within these groups, revealing a non-normally distributed pattern.
+
+## Principal Component Analysis (PCA):
+PCA was applied to simplify the dataset, successfully reducing it to a few principal components that captured the core differences in data. The analysis revealed that the first three components explained over 60% of the variance, with the primary component predominantly influenced by weight and BMI.
+
+## Correlation Studies:
+Three regression models were utilised:
+1. **BMI Regression:** Employing Ordinary Least Squares (OLS), this model showed a high explanatory power with an R-squared value of 0.995, affirming strong dependencies between BMI, weight, and height.
+2. **Activity Intensity Regression:** This model aimed to explore insights from categorical data using activity IDs but was limited due to the nature of the regression more suited to continuous outcomes.
+3. **Heart Rate Regression:** With an R-squared value of 0.582, this model suggested moderate explanatory power. Factors like age and height positively correlated with heart rate, whereas weight and activity duration showed negative correlations.
+
+## Empirical Cumulative Distribution Function (ECDF) Plots:
+ECDF plots were employed to emphasise the distinct BMI profiles across the two separated DataFrames, highlighting the importance of BMI in categorising subjects for this analysis.
+
+### Conclusions
+
+The study conducted has provided essential insights into the usage and effectiveness of a fitness tracking device across a limited but informative sample size. Through a series of activities, both minimal and moderately intense, and an initial analysis involving graphical representations and mathematical models, several actionable recommendations have been formulated. These recommendations, derived from the findings, aim to optimise the device’s performance and user experience by addressing identified limitations in study design and demographic inclusivity.
+
+Key observations noted the lack of gender balance and limited participant diversity in terms of body weight categories, which could skew results and diminish the generalisability of the study’s outcomes. The current cohort, dominated by males and primarily consisting of individuals classified as 'healthy' or 'overweight,' may not adequately represent the broader population who might benefit from such a device, particularly those in the 'underweight' or 'obese' categories.
+
+Additionally, the study highlighted the absence of comprehensive activity completion and the lack of intensity in the exercises chosen. These factors combined have resulted in a dataset that, whilst useful, is not fully representative of the potential variability in a more diverse population.
+
+### Future Work
+
+- Rectify the limitations observed in the initial research to improve study results.
+- Expand the participant base to ensure a balanced gender representation.
+- Include a broader range of weight categories to enhance the study's applicability.
+- Incorporate more intense physical activities to test the device's effectiveness thoroughly.
+- Ensure that all participants complete the designated activities to increase data robustness and reliability.
+
+Integrating new technologies such as a BMI calculation feature within the device could offer more personalised feedback and advice to users, enhancing the device's utility and appeal. This feature would enable the device to calculate BMI and provide targeted health and fitness guidance accordingly.
+
+Moreover, to extend the functionality of the device further, future iterations could include additional sensors for measuring metrics such as muscle mass and calories burned. These enhancements would not only improve the precision of health assessments provided by the device but also motivate users by allowing them to track their progress more effectively.
+
+The implementation of these recommendations and the subsequent analysis of their impact will be crucial in evolving the device's capabilities and ensuring it meets the needs of a broader user base. Continued innovation and adaptation, based on empirical data and user feedback, will be key to maintaining and enhancing the relevance and effectiveness of the fitness tracking device in promoting health and wellbeing.
