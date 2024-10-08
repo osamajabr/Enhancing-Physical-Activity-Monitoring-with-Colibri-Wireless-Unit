@@ -27,8 +27,7 @@ This research is significant as it contributes to the field of personal health m
 Data was collected from nine subjects equipped with three Colibri wireless IMUs and a BM-CS5SR heart-rate monitor. The subjects consisted of one female and eight males, aged 27.22 ± 3.31 years.
 
 ### Subject Details
-Comprehensive demographic and physiological data were collected for each subject, including specific measurements like age, gender, height, weight, resting heart rate, and maximum heart rate. Detailed individual subject information is available in [Subject Information](/assets/subjectInformation.pdf/)
-.
+Comprehensive demographic and physiological data were collected for each subject, including specific measurements like age, gender, height, weight, resting heart rate, and maximum heart rate. Detailed individual subject information is available in [Subject Information](./assets/subjectInformation.pdf).
 
 ### Data Collection Hardware
 - **IMUs**: Three Colibri wireless inertial measurement units were used, placed over the wrist of the dominant arm, on the chest, and on the dominant side's ankle. These units sampled data at 100Hz, providing detailed measurements including 3D-acceleration, gyroscope, and magnetometer readings across multiple axes.
