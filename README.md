@@ -34,7 +34,7 @@ Comprehensive demographic and physiological data were collected for each subject
 - **Heart Rate Monitor**: The heart rate was recorded using a BM-CS5SR monitor.
 
 ### Activities Performed
-The subjects performed a structured set of 12 basic activities outlined in the `DataCollectionProtocol.pdf`, with additional optional activities suggested from a list containing a wide range of everyday, household, and sports activities. The basic activities included:
+The subjects performed a structured set of 12 basic activities outlined in the [Data Collection Protocol](./assets/DataCollectionProtocol.pdf), with additional optional activities suggested from a list containing a wide range of everyday, household, and sports activities. The basic activities included:
 1. Lying
 2. Sitting/
 3. Standing
@@ -56,13 +56,13 @@ Additional activities performed by some subjects included:
 5. Playing soccer
 6. Rope jumping
 
-Each activity was performed according to specific guidelines to ensure consistent data collection across subjects. A complete description of these activities, including their setup and execution, can be found in [description of activities](/DescriptionOfActivities.pdf/).
+Each activity was performed according to specific guidelines to ensure consistent data collection across subjects. A complete description of these activities, including their setup and execution, can be found in [Description of Activities](./assets/DescriptionOfActivities.pdf/).
 
 ### Data Collection Protocol
 Each subject followed a detailed protocol for the data collection, performing the specified activities in a controlled environment. The protocol ensured that data was collected systematically for each activity, capturing physiological responses accurately. The protocol also suggested additional optional activities, enhancing the dataset with diverse physical exertions.
 
 ### Summary of Collected Data
-Over 10 hours of data were collected, with nearly 8 hours labeled according to the 18 different activities performed. Due to the use of wireless sensors, some data points were missing, attributed to data dropping or hardware issues like connection losses or system crashes. Detailed summaries of the data collected for each activity by each subject are provided in [performed activities summary](/PerformedActivitiesSummary.pdf/).
+Over 10 hours of data were collected, with nearly 8 hours labeled according to the 18 different activities performed. Due to the use of wireless sensors, some data points were missing, attributed to data dropping or hardware issues like connection losses or system crashes. Detailed summaries of the data collected for each activity by each subject are provided in [Performed Activities Summary](./assets/PerformedActivitiesSummary.pdf/).
 
 
 ## Libraries and Modules Utilised
@@ -90,7 +90,7 @@ For comprehensive data analysis and modeling, a variety of Python libraries and 
 - **Process**: For subjects with optional activity data, these data were merged with their main dataset, expanding the range of activities analysed and enhancing data depth.
 
 #### Data Cleaning
-- **Handling Missing Values**: Removed unreliable sensor readings and filled missing values. Specifically, NaN values in the 'heart rate (bpm)' column were filled using forward and backward filling methods to preserve data continuity without introducing bias.
+- **Handling Missing Values**: Removed NaN values from the DataFrame after the 'heart rate (bpm)' column was filled using forward and backward filling methods, to preserve data continuity without introducing bias.
 - **Adjustments in Data**:
   - Activity data with activityID of 0, indicating transitional or unlabeled activities, were removed to maintain focus on relevant activity data.
   - Specific sensor data columns identified as unreliable were excluded from further analysis.
@@ -108,53 +108,57 @@ For comprehensive data analysis and modeling, a variety of Python libraries and 
 
 The hypothesis assumes that physiological metrics derived from Colibri Wireless units can accurately predict the type of physical activity and its intensity. The analytical methodology involves the following main stages:
 
-1. **Dimensionality Reduction**: Utilize Principal Component Analysis (PCA) to reduce the complexity of the dataset while preserving essential features. This transformation helps simplify the subsequent analysis by focusing on the most significant variables that contribute to variance in the data.
+1. **Dimensionality Reduction**: Utilise Principal Component Analysis (PCA) to reduce the complexity of the dataset while preserving essential features. This transformation helps simplify the subsequent analysis by focusing on the most significant variables that contribute to variance in the data.
 
-2. **Regression Analysis**: Develop regression models to predict activity types based on physiological data metrics. These models aim to correlate specific physiological responses with different physical activities and intensities, providing a predictive framework for recognizing activity types.
+2. **Regression Analysis**: Develop regression models to predict Body Mass Index (BMI) based on physiological and temporal data metrics. These models aim to correlate specific physiological responses and time-related variables with BMI, providing a predictive framework for understanding how different metrics influence BMI values..
 
-This methodology is designed to enhance the predictive accuracy of physical activity monitoring using data collected from the Colibri Wireless units. It supports detailed analysis and interpretation of the physiological data to understand activity patterns better.
 
-# Detailed Analytical Results: Revised Analysis
+## Analytical Results
 
-## Activity Patterns:
-It was observed from the bar charts that not all subjects participated in every activity and did not spent the same duration doing each activity, showcasing varied engagement levels. 
+#### Activity Patterns:
+It was observed from the bar charts that not all subjects participated in every activity and did not spend the same duration doing each activity, showcasing varied engagement levels. 
 
-## BMI Insights:
+#### BMI Insights:
 Individuals were categorised into 'Healthy' and 'Overweight' groups based on their BMI, with no participants falling into 'Underweight' or 'Obese' categories. This categorisation was crucial in analysing patterns, as shown in the box-and-whisker plots that detailed the time taken for activities and heart rates, indicating different physical exertion levels across BMI categories.
 
-## Data Distribution:
+#### Data Distribution:
 The dataset was divided based on BMI categories ('Underweight' and 'Healthy' versus 'Overweight' and 'Obese'), and histograms were used to study the data distribution within these groups, revealing a non-normally distributed pattern.
 
-## Principal Component Analysis (PCA):
+#### Principal Component Analysis (PCA):
 PCA was applied to simplify the dataset, successfully reducing it to a few principal components that captured the core differences in data. The analysis revealed that the first three components explained over 60% of the variance, with the primary component predominantly influenced by weight and BMI.
 
-## Correlation Studies:
+#### Correlation Studies:
 Three regression models were utilised:
 1. **BMI Regression:** Employing Ordinary Least Squares (OLS), this model showed a high explanatory power with an R-squared value of 0.995, affirming strong dependencies between BMI, weight, and height.
 2. **Activity Intensity Regression:** This model aimed to explore insights from categorical data using activity IDs but was limited due to the nature of the regression more suited to continuous outcomes.
 3. **Heart Rate Regression:** With an R-squared value of 0.582, this model suggested moderate explanatory power. Factors like age and height positively correlated with heart rate, whereas weight and activity duration showed negative correlations.
 
-## Empirical Cumulative Distribution Function (ECDF) Plots:
+### Empirical Cumulative Distribution Function (ECDF) Plots:
 ECDF plots were employed to emphasise the distinct BMI profiles across the two separated DataFrames, highlighting the importance of BMI in categorising subjects for this analysis.
 
-### Conclusions
+## Conclusions
 
-The study conducted has provided essential insights into the usage and effectiveness of a fitness tracking device across a limited but informative sample size. Through a series of activities, both minimal and moderately intense, and an initial analysis involving graphical representations and mathematical models, several actionable recommendations have been formulated. These recommendations, derived from the findings, aim to optimise the device’s performance and user experience by addressing identified limitations in study design and demographic inclusivity.
+The study conducted has provided essential insights into the usage and effectiveness of a fitness tracking device, utilising a limited but informative sample size. Through a series of activities ranging from minimal to moderately intense, and through initial analyses involving graphical representations and mathematical models, several actionable recommendations have been formulated. These recommendations, derived from the findings, aim to optimise the device’s performance and enhance user experience by addressing identified limitations in study design and demographic inclusivity.
 
-Key observations noted the lack of gender balance and limited participant diversity in terms of body weight categories, which could skew results and diminish the generalisability of the study’s outcomes. The current cohort, dominated by males and primarily consisting of individuals classified as 'healthy' or 'overweight,' may not adequately represent the broader population who might benefit from such a device, particularly those in the 'underweight' or 'obese' categories.
+**Key Observations:**
 
-Additionally, the study highlighted the absence of comprehensive activity completion and the lack of intensity in the exercises chosen. These factors combined have resulted in a dataset that, whilst useful, is not fully representative of the potential variability in a more diverse population.
+- **Gender Balance and Participant Diversity:**
+  - The study reveals a significant lack of gender balance and limited diversity in participant body weight categories.
+  - The dominance of males and the concentration of individuals classified as 'healthy' or 'overweight' could skew results.
+  - This lack of representation diminishes the generalisability of the study’s outcomes, particularly for those in the 'underweight' or 'obese' categories who might benefit from such a device.
 
-### Future Work
+- **Activity Completion and Exercise Intensity:**
+  - There is an absence of comprehensive activity completion and a lack of intensity in the exercises chosen.
+  - These factors result in a dataset that, while useful, is not fully representative of the potential variability in a more diverse population.
+  - Integration of BMI: A software to add Body Mass Index (BMI) is crucial. The analysis has demonstrated the impact of BMI and how it would be a great add to the device. Therefore, calculating BMI when users input their weight and height will enhance accuracy. Additionally, BMI can help users monitor their progress, set goals, and enable the device to offer personalised recommendations and insights based on their BMI category (e.g., underweight, healthy, overweight, or obese). This may include customised exercise plans, dietary advice, or goal adjustments. On the other hand, inputting the user's gender and BMI into the device can allow the device to educate the user on potential health concerns and encourage them to seek professional guidance when necessary.
 
-- Rectify the limitations observed in the initial research to improve study results.
+## Future Work
+
+- Improve the study results by addressing the limitations identified in the initial research.
 - Expand the participant base to ensure a balanced gender representation.
 - Include a broader range of weight categories to enhance the study's applicability.
 - Incorporate more intense physical activities to test the device's effectiveness thoroughly.
 - Ensure that all participants complete the designated activities to increase data robustness and reliability.
-
-Integrating new technologies such as a BMI calculation feature within the device could offer more personalised feedback and advice to users, enhancing the device's utility and appeal. This feature would enable the device to calculate BMI and provide targeted health and fitness guidance accordingly.
-
-Moreover, to extend the functionality of the device further, future iterations could include additional sensors for measuring metrics such as muscle mass and calories burned. These enhancements would not only improve the precision of health assessments provided by the device but also motivate users by allowing them to track their progress more effectively.
+- To extend the functionality of the device further, future iterations could include additional sensors for measuring metrics such as muscle mass and calories burned. These enhancements would not only improve the precision of health assessments provided by the device but also motivate users by allowing them to track their progress more effectively.
 
 The implementation of these recommendations and the subsequent analysis of their impact will be crucial in evolving the device's capabilities and ensuring it meets the needs of a broader user base. Continued innovation and adaptation, based on empirical data and user feedback, will be key to maintaining and enhancing the relevance and effectiveness of the fitness tracking device in promoting health and wellbeing.
