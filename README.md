@@ -1,18 +1,20 @@
-# Enhancing Physical Activity Monitoring with Colibri Wireless Unit: Comprehensive Analysis
+# Enhancing Physical Activity Monitoring with Colibri Wireless Unit
 
 ## Introduction and Project Background
 
-The advent of fitness trackers marks a significant evolution in the landscape of personal health technology. Originally developed as basic heart monitors in the 1980s, these devices have undergone substantial transformation, becoming intricate systems that offer rich insights into various health metrics and physical activities. Modern fitness trackers not only measure heart rates but also track sleep patterns, count steps, monitor various forms of physical activity, and even provide GPS tracking for outdoor activities. This development has been propelled by advances in sensor technology, data analytics, and consumer demand for wearable health monitoring devices.
+The  rise of fitness trackers marks a significant evolution in the landscape of personal health technology. Originally developed as basic heart monitors in the 1980s, these devices have undergone substantial transformation, becoming intricate systems that offer rich insights into various health metrics and physical activities. Modern fitness trackers not only measure heart rates but also track sleep patterns, count steps, monitor various forms of physical activity, and even provide GPS tracking for outdoor activities. This development has been driven by advances in sensor technology, data analytics, and consumer demand for wearable health monitoring devices.
 
-This project centers on the Colibri Wireless unit, an advanced inertial measurement unit (IMU)  The Colibri unit stands out due to its unique configuration of incorporating multiple sensors that capture three-dimensional acceleration, angular rates, and magnetic fields, providing high-resolution data. This project aims to leverage these capabilities to offer more precise and detailed monitoring of physical activities than its competitors.
+This project centers on the Colibri Wireless unit, an advanced inertial measurement unit (IMU). The Colibri unit stands out due to its unique configuration of incorporating multiple sensors that capture three-dimensional acceleration, angular rates, and magnetic fields, providing high-resolution data. This project aims to leverage these capabilities to offer more precise and detailed monitoring of physical activities than its competitors.
 
 ### Project Goals
 
 The primary goal of this project is to enhance the utility of the Colibri Wireless unit in health and activity monitoring applications, with a specific focus on integrating BMI (Body Mass Index) calculations to improve health risk assessment and activity monitoring accuracy. By analysing detailed data captured from various daily and sports activities under controlled conditions, coupled with BMI and related health metrics, we aim to:
 
-1. Develop algorithms that can accurately predict the type of activity being performed by an individual, factoring in BMI to refine the estimation of energy expenditure and health risk assessment.
-2. Refine the unit's data processing capabilities to improve the accuracy and reliability of health metrics derived from raw sensor data and BMI calculations.
-
+1. Investigate how BMI interacts with various health-related metrics to understand its impact on overall health and fitness device effectiveness.
+2. Enhance device performance and user experience by Formulating actionable recommendations based on the study’s findings to optimise the fitness tracking device. These enhancements could involve adjustments to the device's sensors, algorithms, or user interface.
+3. Address study design limitations.
+4. Explore more sophisticated modelling techniques by incorporating additional variables that were not included in the initial study.
+   
 This integration of BMI into the Colibri Wireless unit will also allow for the evaluation of health trends and comparisons across different populations and regions over time, making the device a more versatile tool in both personal health management and broader epidemiological studies.
 
 ### Research Significance
