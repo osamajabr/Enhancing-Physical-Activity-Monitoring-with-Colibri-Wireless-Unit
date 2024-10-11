@@ -130,8 +130,7 @@ PCA was applied to simplify the dataset, successfully reducing it to a few princ
 #### Correlation Studies:
 Three regression models were utilised:
 1. **BMI Regression:** Employing Ordinary Least Squares (OLS), this model showed a high explanatory power with an R-squared value of 0.995, affirming strong dependencies between BMI, weight, and height.
-2. **Activity Intensity Regression:** This model aimed to explore insights from categorical data using activity IDs but was limited due to the nature of the regression more suited to continuous outcomes.
-3. **Heart Rate Regression:** With an R-squared value of 0.582, this model suggested moderate explanatory power. Factors like age and height positively correlated with heart rate, whereas weight and activity duration showed negative correlations.
+2. **Heart Rate Regression:** With an R-squared value of 0.582, this model suggested moderate explanatory power. Factors like age and height positively correlated with heart rate, whereas weight and activity duration showed negative correlations.
 
 ### Empirical Cumulative Distribution Function (ECDF) Plots:
 ECDF plots were employed to emphasise the distinct BMI profiles across the two separated DataFrames, highlighting the importance of BMI in categorising subjects for this analysis.
