@@ -4,7 +4,7 @@
 
 The  rise of fitness trackers marks a significant evolution in the landscape of personal health technology. Originally developed as basic heart monitors in the 1980s, these devices have undergone substantial transformation, becoming intricate systems that offer rich insights into various health metrics and physical activities. Modern fitness trackers not only measure heart rates but also track sleep patterns, count steps, monitor various forms of physical activity, and even provide GPS tracking for outdoor activities. This development has been driven by advances in sensor technology, data analytics, and consumer demand for wearable health monitoring devices.
 
-This project centers on the Colibri Wireless unit, an advanced inertial measurement unit (IMU). The Colibri unit stands out due to its unique configuration of incorporating multiple sensors that capture three-dimensional acceleration, angular rates, and magnetic fields, providing high-resolution data. This project aims to leverage these capabilities to offer more precise and detailed monitoring of physical activities than its competitors.
+This project centers on the Colibri Wireless unit, an advanced inertial measurement unit (IMU). More details about the unit can be found [here](./assets/TrivisioColibriwirelessBrochure.pdf). The Colibri unit stands out due to its unique configuration of incorporating multiple sensors that capture three-dimensional acceleration, angular rates, and magnetic fields, providing high-resolution data. This project aims to leverage these capabilities to offer more precise and detailed monitoring of physical activities than its competitors.
 
 ### Project Goals
 
@@ -91,7 +91,7 @@ For comprehensive data analysis and modeling, a variety of Python libraries and 
 
 #### Data Cleaning
 - **Handling Missing Values**: Removed NaN values from the DataFrame after the 'heart rate (bpm)' column was filled using forward and backward filling methods, to preserve data continuity without introducing bias.
-- **Adjustments in Data**:
+- **Adjustments in Data based on the project's [report](./assets/Report_data_info.pdf/)**:
   - Activity data with activityID of 0, indicating transitional or unlabeled activities, were removed to maintain focus on relevant activity data.
   - Specific sensor data columns identified as unreliable were excluded from further analysis.
   - Orientation data, found to be invalid, were discarded to prevent skewed analysis.
