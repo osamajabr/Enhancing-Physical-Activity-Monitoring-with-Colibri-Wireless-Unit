@@ -15,7 +15,6 @@ The primary goal of this project is to enhance the utility of the Colibri Wirele
 3. Address study design limitations.
 4. Explore more sophisticated modelling techniques by incorporating additional variables that were not included in the initial study.
    
-This integration of BMI into the Colibri Wireless unit will also allow for the evaluation of health trends and comparisons across different populations and regions over time, making the device a more versatile tool in both personal health management and broader epidemiological studies.
 
 ### Research Significance
 
@@ -36,7 +35,7 @@ Comprehensive demographic and physiological data were collected for each subject
 ### Activities Performed
 The subjects performed a structured set of 12 basic activities outlined in the [Data Collection Protocol](./assets/DataCollectionProtocol.pdf), with additional optional activities suggested from a list containing a wide range of everyday, household, and sports activities. The basic activities included:
 1. Lying
-2. Sitting/
+2. Sitting
 3. Standing
 4. Walking
 5. Running
